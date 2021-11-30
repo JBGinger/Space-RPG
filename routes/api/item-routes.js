@@ -41,6 +41,7 @@ router.post("/", (req, res) => {
 		price: req.body.price,
 		planet_id: req.body.planet_id,
 	})
+		// TODO: import inventory model, use .setItems method
 		.then((dbItemData) => res.json(dbItemData))
 		.catch((err) => {
 			console.log(err);
