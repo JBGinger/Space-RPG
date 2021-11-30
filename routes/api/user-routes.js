@@ -62,7 +62,9 @@ router.post("/", (req, res) => {
 });
 
 // LOGIN /api/users/login
-router.post("/login", (req, res) => {});
+router.post("/login", (req, res) => {
+	// TODO:
+});
 
 // PUT /api/users/1
 router.put("/:id", (req, res) => {
