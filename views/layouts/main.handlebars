@@ -10,21 +10,28 @@
 
 <body>
     <div class="wrapper">
-        <h1>Space RPG!</h1>
-        <nav>
-            {{#if loggedIn}}
-            <section id="leftMenu">
-                <a href="/homepage">Home</a>
-                <a href="/inventory">Inventory</a>
-                <a href="/planetselect">Explore</a>
-                <a href="/login.handlebars">Log Out</a>
-            </section>
-            {{/if}}
-        </nav>
+        <header>
+            <h1>
+                <a href="/">
+                    Space RPG!
+                </a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <section id="leftMenu">
+                    <span class="menu-buttons"><a href="/homepage">Home</a></span>
+                    <span class="menu-buttons"><a href="/inventory">Inventory</a></span>
+                    <span class="menu-buttons"><a href="/planetselect">Explore</a></span>
+                    <span class="menu-buttons"><button id="logout" class="button"> Log Out </button></span>
+                </section>
+                {{/if}}
+            </nav>
+        </header>
         <main>
             {{{ body }}}
         </main>
     </div>
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
