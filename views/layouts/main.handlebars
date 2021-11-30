@@ -5,36 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space RPG!</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
+    <div class="uk-background-primary">
+        <div class="wrapper">
+            <header>
                 <a href="/">
-                    Space RPG!
+                    <h1 id="logo">Space RPG</h1>
                 </a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <section id="leftMenu">
-                    <span class="menu-buttons"><a href="/homepage">Home</a></span>
-                    <span class="menu-buttons"><a href="/inventory">Inventory</a></span>
-                    <span class="menu-buttons"><a href="/planetselect">Explore</a></span>
-                    <span class="menu-buttons"><button id="logout" class="button"> Log Out </button></span>
-                </section>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-    </div>
+            </header>
+            <div class="flex-container">
+                <nav id="menu">
+                    <!-- {{#if loggedIn}} -->
+                    <section>
+                        <a href="/homepage">
+                            <div class="menu-buttons">Home</div>
+                        </a>
+                        <a href="/inventory">
+                            <div class="menu-buttons">Inventory</div>
+                        </a>
+                        <a href="/planetselect">
+                            <div class="menu-buttons">Explore</div>
+                        </a>
 
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+                        <span class="menu-buttons"><button id="logout"> Log Out </button></span>
+                    </section>
+                    <!-- {{/if}} -->
+                </nav>
+                <div class="main-container">
+                    contents
+                </div>
+            </div>
+
+            <main>
+                <!-- {{{ body }}} -->
+            </main>
+        </div>
+
+        <!-- {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+        {{/if}} -->
+
+    </div>
 </body>
 
 </html>
