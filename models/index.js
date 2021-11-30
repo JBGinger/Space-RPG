@@ -12,4 +12,8 @@ Inventory.hasMany(Item);
 
 Item.belongsTo(Inventory);
 
+Item.belongsTo(Planet);
+
+Planet.hasMany(Item);
+
 module.exports = { User, Item, Planet, Inventory };

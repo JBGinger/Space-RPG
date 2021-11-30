@@ -13,6 +13,15 @@ router.get("/", (req, res) => {
 		});
 });
 
+// router.get('/:id', (req, res) => {
+// 	Item.findOne({
+// 		where: {
+// 			id: req.params.id,
+// 		},
+// 		include
+// 	})
+// })
+
 // GET /api/
 router.get("/:id", (req, res) => {
 	Item.findOne({

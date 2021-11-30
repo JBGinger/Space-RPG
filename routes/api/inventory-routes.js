@@ -23,6 +23,11 @@ router.get("/:id", (req, res) => {
 		where: {
 			id: req.params.id,
 		},
+		include: [
+			{
+				model: Item,
+			},
+		],
 	})
 		.then((dbInventoryData) => {
 			if (!dbInventoryData) {
@@ -38,18 +43,58 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/inventory
+// FIXME: figure out what is needed from this POST route
 router.post("/", (req, res) => {
-	// TODO: post routes
+	Inventory.create({
+		user_id: req.body.user_id,
+	})
+		.then((dbInventoryData) => res.json(dbInventoryData))
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
 });
 
 // PUT /api/inventory/1
+// FIXME: see what we will need this route for to adjust
 router.put("/:id", (req, res) => {
-	// TODO:
+	Inventory.update(req.body, {
+		where: {
+			id: req.params.id,
+		},
+	})
+		.then((dbInventoryData) => {
+			if (!dbInventoryData) {
+				res.status(404).json({ message: "No inventory found with this id" });
+				return;
+			}
+			res.json(dbInventoryData);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
 });
 
 // DELETE /api/inventory/1
 router.delete("/:id", (req, res) => {
 	// TODO:
+	Inventory.destroy({
+		where: {
+			id: req.params.id,
+		},
+	})
+		.then((dbInventoryData) => {
+			if (!dbInventoryData) {
+				res.status(404).json({ message: "No inventory found with this id" });
+				return;
+			}
+			res.json(dbInventoryData);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
 });
 
 module.exports = router;
