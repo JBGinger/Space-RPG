@@ -38,12 +38,18 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/inventory
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+	// TODO: post routes
+});
 
 // PUT /api/inventory/1
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+	// TODO:
+});
 
 // DELETE /api/inventory/1
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+	// TODO:
+});
 
 module.exports = router;

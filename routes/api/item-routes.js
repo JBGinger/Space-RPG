@@ -50,7 +50,9 @@ router.post("/", (req, res) => {
 });
 
 // PUT /api/
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+	// TODO:
+});
 
 // DELETE /api/
 router.delete("/:id", (req, res) => {
