@@ -20,8 +20,7 @@ a:hover{
     font-family: 'M PLUS 1 Code', sans-serif;
     text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
     color: white;
-    padding: 20px 20px 20px 30px;
-    /* border-bottom: 2px dotted grey; */
+    padding: 20px 20px 10px 50px;
 }
 
 .wrapper{
@@ -39,22 +38,27 @@ a:hover{
 #menu{
     width: 100px;
     font-size: 24px;
-    padding-left: 30px;
-    padding-top: 20px;
+    padding-right: 50px;
+    padding-top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-basis: 100%;
-    flex: 1;
+    flex: 4;
+    justify-content: flex-end;
 }
 
 .menu-buttons{
     color: lightgray;
     text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
     text-decoration: none;
+    margin-left: 20px;
     padding-bottom: 20px;
+    display: inline-block;
+    flex-direction: column;
 }
 
-#logout{
+
+#logout, #login{
     font-family: 'M PLUS 1 Code', sans-serif;
     font-size: 24px;
     color: lightgray;
@@ -65,13 +69,28 @@ a:hover{
 }
 
 .main-container{
-    flex: 4;
-    height: 200px;
-    margin: 20px 30px 0 0;
+    height: 650px;
+    margin: 0 40px 0 40px;
     padding: 20px;
-    border: 2px dotted grey;
+    border: 2px gray;
+    border-style: outset;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 7;
+}
+
+/* #background-image{
+    background-image: url(../../assets/starry-night-design.jpg);
+    background-position:center; 
+    background-repeat:no-repeat;
+} */
+
+#welcome-text{
+    color: white;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
