@@ -3,7 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 
-const routes = require("./routes");
+const controllers = require("./controllers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,7 +31,7 @@ app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
-app.use(routes);
+app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => console.log(`Now Listening ${PORT}!`));

@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Inventory, Item, Planet } = require("../models");
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('login');
 });
 
 router.get('/inventory', (req, res) => {
@@ -12,6 +12,14 @@ router.get('/inventory', (req, res) => {
   //   return;
   // }  
   res.render('inventory', { name: "Example" });
+});
+
+router.get('/dashboard', (req, res) => {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }  
+  res.render('dashboard');
 });
 
 router.get('/explore', (req, res) => {
