@@ -18,7 +18,7 @@ a:hover{
 
 #logo{
     font-family: 'M PLUS 1 Code', sans-serif;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 4px #ccc;
     color: white;
     padding: 20px 20px 10px 50px;
 }
@@ -49,7 +49,7 @@ a:hover{
 
 .menu-buttons{
     color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
     text-decoration: none;
     margin-left: 20px;
     padding-bottom: 20px;
@@ -62,7 +62,7 @@ a:hover{
     font-family: 'M PLUS 1 Code', sans-serif;
     font-size: 24px;
     color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
     padding: 0;
     border: none;
     background: none;
@@ -79,16 +79,27 @@ a:hover{
     flex-basis: 100%;
 }
 
-/* #background-image{
-    background-image: url(../../assets/starry-night-design.jpg);
+#background-image{
+    background-image: url(./starry-night-design.jpg);
     background-position:center; 
     background-repeat:no-repeat;
-} */
+}
 
 #welcome-text{
     color: white;
-    text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
     font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contents{
+    /* color: white;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc; */
+    font-size: 20px;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
