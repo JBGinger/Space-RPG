@@ -30,6 +30,14 @@ router.get('/explore', (req, res) => {
   res.render('planetselect');
 });
 
+router.get('/mars', (req, res) => {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('mars');
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

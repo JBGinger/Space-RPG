@@ -8,7 +8,7 @@ const itemData = [
 		planet_id: 1,
 	},
 	{
-		item_name: "Sulfer",
+		item_name: "Sulphur",
 		rarity: "common",
 		price: 10,
 		planet_id: 2,
