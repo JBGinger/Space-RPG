@@ -13,6 +13,15 @@ router.get("/", (req, res) => {
 		});
 });
 
+// router.get('/:id', (req, res) => {
+// 	Item.findOne({
+// 		where: {
+// 			id: req.params.id,
+// 		},
+// 		include
+// 	})
+// })
+
 // GET /api/
 router.get("/:id", (req, res) => {
 	Item.findOne({
@@ -41,6 +50,7 @@ router.post("/", (req, res) => {
 		price: req.body.price,
 		planet_id: req.body.planet_id,
 	})
+		// TODO: import inventory model, use .setItems method
 		.then((dbItemData) => res.json(dbItemData))
 		.catch((err) => {
 			console.log(err);
@@ -49,7 +59,9 @@ router.post("/", (req, res) => {
 });
 
 // PUT /api/
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+	// TODO:
+});
 
 // DELETE /api/
 router.delete("/:id", (req, res) => {

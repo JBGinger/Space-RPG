@@ -4,12 +4,16 @@ const Planet = require("./Planet");
 const Inventory = require("./Inventory");
 
 // Inventory belongsTo User
-Inventory.belongsTo(User, {
-	foreignKey: "user_id",
-});
+Inventory.belongsTo(User);
 
-// Inventory.hasMany(Item, {
-// 	foreignKey: "inventory_id",
-// });
+User.hasOne(Inventory);
+
+Inventory.hasMany(Item);
+
+Item.belongsTo(Inventory);
+
+Item.belongsTo(Planet);
+
+Planet.hasMany(Item);
 
 module.exports = { User, Item, Planet, Inventory };

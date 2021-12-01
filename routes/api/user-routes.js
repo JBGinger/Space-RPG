@@ -62,7 +62,21 @@ router.post("/", (req, res) => {
 });
 
 // LOGIN /api/users/login
-router.post("/login", (req, res) => {});
+router.post("/login", (req, res) => {
+	// query the User table using the findOne() method for the username entered
+	User.findOne({
+		// take that username and assign it to req.body.username
+		where: {
+			username: req.body.username,
+		},
+	}).then((dbUserData) => {
+		if (!dbUserData) {
+			res.status(404).json({ message: "No user with that username found" });
+			return;
+		}
+		res.json({ user: dbUserData });
+	});
+});
 
 // PUT /api/users/1
 router.put("/:id", (req, res) => {
