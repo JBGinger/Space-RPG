@@ -27,6 +27,12 @@ User.init(
 				len: [4],
 			},
 		},
+		// inventory_id: {
+		// 	references: {
+		// 		model: "inventory",
+		// 		key: "id",
+		// 	},
+		// },
 	},
 	{
 		hooks: {
