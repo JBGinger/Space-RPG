@@ -105,3 +105,33 @@ a:hover{
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.login-form{
+    padding: 30px;
+}
+
+.id-password-label{
+    flex-direction: row;
+    /* display: inline-block; */
+    float: left;
+}
+
+.id-password-input{
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.sign-in-link{
+    color: white;
+    text-decoration: none !important;
+}
+
+.login-logout-buttons{
+    margin-top: 20px;
+}
+
+#user-login, #password-login{
+    background-color: white;
+    border-style: none;
+    border-radius: 4px;
+}
