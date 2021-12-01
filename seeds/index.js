@@ -22,19 +22,21 @@ const seedAll = async () => {
 
 	// use sequelize 'set' to seed inventory
 	const inventory = await seedInventory();
+
 	await inventory[0].setItems(items[0]);
+	// await inventory[0].setItems(items[2]);
 	await inventory[1].setItems(items[1]);
 	await inventory[2].setItems(items[2]);
 	await inventory[3].setItems(items[3]);
+
 	await Inventory.findAll({
 		include: [
 			{
 				model: Item,
+				key: "id",
 			},
 		],
-	}).then((dbInventory) =>
-		console.log("\n----- INVENTORY SEEDED WITH ITEMS -----\n", dbInventory)
-	);
+	}).then((dbInventory) => console.log(dbInventory));
 
 	process.exit(0);
 };
