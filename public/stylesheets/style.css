@@ -18,10 +18,9 @@ a:hover{
 
 #logo{
     font-family: 'M PLUS 1 Code', sans-serif;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 4px #ccc;
     color: white;
-    padding: 20px 20px 20px 30px;
-    /* border-bottom: 2px dotted grey; */
+    padding: 20px 20px 10px 50px;
 }
 
 .wrapper{
@@ -31,40 +30,78 @@ a:hover{
 
 .flex-container{
     flex-direction: row;
-    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 #menu{
-    /* float:left; */
-    /* width: 10%; */
     width: 100px;
     font-size: 24px;
-    padding-left: 30px;
-    padding-top: 20px;
+    padding-right: 50px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex: 4;
+    justify-content: flex-end;
 }
 
 .menu-buttons{
     color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
     text-decoration: none;
+    margin-left: 20px;
     padding-bottom: 20px;
+    display: inline-block;
+    flex-direction: column;
 }
 
-#logout{
+
+#logout, #login{
     font-family: 'M PLUS 1 Code', sans-serif;
     font-size: 24px;
     color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
     padding: 0;
     border: none;
     background: none;
 }
 
 .main-container{
-    /* float:right; */
-    /* width: 80%; */
-    height: 200px;
-    margin: 20px;
+    height: 650px;
+    margin: 0 40px 0 40px;
     padding: 20px;
-    border: 2px dotted grey;
+    border: 2px gray;
+    border-style: outset;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+#background-image{
+    background-image: url(./starry-night-design.jpg);
+    background-position:center; 
+    background-repeat:no-repeat;
+}
+
+#welcome-text{
+    color: white;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contents{
+    /* color: white;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc; */
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
