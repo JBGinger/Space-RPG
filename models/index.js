@@ -8,15 +8,9 @@ Inventory.belongsTo(User);
 
 User.hasOne(Inventory);
 
-Item.belongsTo(Inventory, {
-	foreignKey: "item_id",
-	constraints: false,
-});
+Item.belongsTo(Inventory);
 
-Inventory.hasMany(Item, {
-	foreignKey: "item_id",
-	constraints: false,
-});
+Inventory.hasMany(Item);
 
 Item.belongsTo(Planet);
 
