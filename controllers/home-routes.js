@@ -38,6 +38,14 @@ router.get('/mars', (req, res) => {
   res.render('mars');
 });
 
+router.get('/venus', (req, res) => {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('venus');
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
