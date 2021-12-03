@@ -130,9 +130,50 @@ a:hover {
 	margin-top: 20px;
 }
 
-#user-login,
-#password-login {
-	background-color: white;
-	border-style: none;
-	border-radius: 4px;
+#user-login, #password-login{
+    background-color: white;
+    border-style: none;
+    border-radius: 4px;
+}
+
+#planets{
+    display: flex;
+}
+
+.mars, .venus{
+    font-family: 'M PLUS 1 Code', sans-serif;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
+    font-size: 30px;
+    text-decoration: none !important;
+    padding: 20px 120px 40px 120px;
+}
+
+#background-image{
+    background-image: url("/assets/starry-night-design.jpg");
+}
+
+#mars-background-image{
+    background-image: url("/assets/planet-mars.jpg");
+}
+
+#venus-background-image{
+    background-image: url("/assets/planet-venus.jpg");
+}
+
+.explore{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    font-family: 'M PLUS 1 Code', sans-serif;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
+    font-size: 30px;
+    text-decoration: none !important;
+}
+
+a{
+    text-decoration: none;
 }
