@@ -46,4 +46,12 @@ router.get("/mars", (req, res) => {
 // 	res.render("login");
 // });
 
+router.get('/venus', (req, res) => {
+  // if (!req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('venus');
+});
+
 module.exports = router;

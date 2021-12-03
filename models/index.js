@@ -6,11 +6,21 @@ const Inventory = require("./Inventory");
 // Inventory belongsTo User
 Inventory.belongsTo(User);
 
-User.hasOne(Inventory);
+//User.hasOne(Inventory);
 
-Item.belongsTo(Inventory);
+User.belongsToMany(Item, {
+	through: Inventory,
+	as: "user_inventory",
+	foreignKey: "user_id"
+  });
 
-Inventory.hasMany(Item);
+Item.belongsToMany(User, {
+	through: Inventory,
+	as: "user_inventory",
+	foreignKey: "item_id"
+  });
+
+//Inventory.hasMany(Item);
 
 Item.belongsTo(Planet);
 
