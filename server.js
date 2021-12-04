@@ -30,7 +30,11 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-
+//Express locale
+app.use(( req , res, next ) => {
+	console.log(req.session);
+	res.locals.loggedIn = req.session.loggedIn; 
+	next() });
 app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {
