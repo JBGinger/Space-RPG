@@ -31,7 +31,8 @@ app.use(express.json());
 // FIXME: set to true or false?????
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-
+//Express locale
+app.use(( req , res, next ) => { res.locals.loggedIn = req.session.loggedIn; next() });
 app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {

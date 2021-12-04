@@ -6,35 +6,41 @@ router.get("/", (req, res) => {
 	res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+	req.session.destroy();
+	res.redirect("/");
+});
+
 router.get("/inventory", (req, res) => {
-	// if (!req.session.loggedIn) {
-	//   res.redirect('/');
-	//   return;
-	// }
+	if (!req.session.loggedIn) {
+	  res.redirect('/');
+	  return;
+	}
 	res.render("inventory", { name: "Example" });
 });
 
 router.get("/dashboard", (req, res) => {
-	// if (!req.session.loggedIn) {
-	//   res.redirect('/');
-	//   return;
-	// }
+	if (!req.session.loggedIn) {
+	  res.redirect('/');
+	  return;
+	}
+	console.log(req.session.loggedIn);
 	res.render("dashboard");
 });
 
 router.get("/explore", (req, res) => {
-	// if (!req.session.loggedIn) {
-	//   res.redirect('/');
-	//   return;
-	// }
+	if (!req.session.loggedIn) {
+	  res.redirect('/');
+	  return;
+	}
 	res.render("planetselect");
 });
 
 router.get("/mars", (req, res) => {
-	// if (!req.session.loggedIn) {
-	//   res.redirect('/');
-	//   return;
-	// }
+	if (!req.session.loggedIn) {
+	  res.redirect('/');
+	  return;
+	}
 	res.render("mars");
 });
 
@@ -47,10 +53,10 @@ router.get("/mars", (req, res) => {
 // });
 
 router.get('/venus', (req, res) => {
-  // if (!req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('venus');
 });
 
