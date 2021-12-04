@@ -1,5 +1,6 @@
 async function loginFormHandler(event) {
 	event.preventDefault();
+	console.log("hi");
 
 	const username = document.querySelector("#username-login").value.trim();
 	const password = document.querySelector("#password-login").value.trim();
@@ -53,6 +54,6 @@ document
 	.querySelector(".login-form")
 	.addEventListener("submit", loginFormHandler);
 
-document
-	.querySelector(".signup-form")
-	.addEventListener("submit", signupFormHandler);
+// document
+// 	.querySelector(".signup-form")
+// 	.addEventListener("submit", signupFormHandler);
