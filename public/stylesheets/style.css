@@ -1,133 +1,133 @@
-body{
-    font-family: 'M PLUS 1 Code', sans-serif;
-    color: white;
+body {
+	font-family: "M PLUS 1 Code", sans-serif;
+	color: white;
 }
 
-.wrapper{
-    height: 1000px;
+.wrapper {
+	height: 1000px;
 }
 
-h1{
-    color: white;
-    text-decoration: none;
+h1 {
+	color: white;
+	text-decoration: none;
 }
 
-a:hover{
-    text-decoration: none !important;
+a:hover {
+	text-decoration: none !important;
 }
 
-#logo{
-    font-family: 'M PLUS 1 Code', sans-serif;
-    text-shadow:1px 1px 10px #fff, 1px 1px 4px #ccc;
-    color: white;
-    padding: 20px 20px 10px 50px;
+#logo {
+	font-family: "M PLUS 1 Code", sans-serif;
+	text-shadow: 1px 1px 10px #fff, 1px 1px 4px #ccc;
+	color: white;
+	padding: 20px 20px 10px 50px;
 }
 
-.wrapper{
-    background-color: black;
-    width: 100%;
+.wrapper {
+	background-color: black;
+	width: 100%;
 }
 
-.flex-container{
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+.flex-container {
+	flex-direction: row;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
-#menu{
-    width: 100px;
-    font-size: 24px;
-    padding-right: 50px;
-    padding-top: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    flex: 4;
-    justify-content: flex-end;
+#menu {
+	width: 100px;
+	font-size: 24px;
+	padding-right: 50px;
+	padding-top: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-basis: 100%;
+	flex: 4;
+	justify-content: flex-end;
 }
 
-.menu-buttons{
-    color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
-    text-decoration: none;
-    margin-left: 20px;
-    padding-bottom: 20px;
-    display: inline-block;
-    flex-direction: column;
+.menu-buttons {
+	color: lightgray;
+	text-shadow: 1px 1px 10px #fff, 1px 1px 2px #ccc;
+	text-decoration: none;
+	margin-left: 20px;
+	padding-bottom: 20px;
+	display: inline-block;
+	flex-direction: column;
 }
 
-
-#logout, #login{
-    font-family: 'M PLUS 1 Code', sans-serif;
-    font-size: 24px;
-    color: lightgray;
-    text-shadow:1px 1px 10px #fff, 1px 1px 2px #ccc;
-    padding: 0;
-    border: none;
-    background: none;
+#logout,
+#login {
+	font-family: "M PLUS 1 Code", sans-serif;
+	font-size: 24px;
+	color: lightgray;
+	text-shadow: 1px 1px 10px #fff, 1px 1px 2px #ccc;
+	padding: 0;
+	border: none;
+	background: none;
 }
 
-.main-container{
-    height: 650px;
-    margin: 0 40px 0 40px;
-    padding: 20px;
-    border: 2px gray;
-    border-style: outset;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
+.main-container {
+	height: 650px;
+	margin: 0 40px 0 40px;
+	padding: 20px;
+	border: 2px gray;
+	border-style: outset;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
 }
 
-#background-image{
-    background-image: url(./starry-night-design.jpg);
-    background-position:center; 
-    background-repeat:no-repeat;
+#background-image {
+	/* background-image: url(./starry-night-design.jpg); */
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
-#welcome-text{
-    color: white;
-    text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
-    font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+#welcome-text {
+	color: white;
+	text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
+	font-size: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
-.contents{
-    /* color: white;
+.contents {
+	/* color: white;
     text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc; */
-    font-size: 20px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+	font-size: 20px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
-.login-form{
-    padding: 30px;
+.login-form {
+	padding: 30px;
 }
 
-.id-password-label{
-    flex-direction: row;
-    /* display: inline-block; */
-    float: left;
+.id-password-label {
+	flex-direction: row;
+	/* display: inline-block; */
+	float: left;
 }
 
-.id-password-input{
-    flex-direction: column;
-    justify-content: flex-end;
+.id-password-input {
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
-.sign-in-link{
-    color: white;
-    text-decoration: none !important;
+.sign-in-link {
+	color: white;
+	text-decoration: none !important;
 }
 
-.login-logout-buttons{
-    margin-top: 20px;
+.login-logout-buttons {
+	margin-top: 20px;
 }
 
 #user-login, #password-login{
