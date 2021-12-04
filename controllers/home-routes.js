@@ -7,8 +7,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
-	req.session.destroy();
-	res.redirect("/");
+	//req.session.loggedIn = false;
+	req.session.destroy(() => res.redirect("/"));
 });
 
 router.get("/inventory", (req, res) => {
