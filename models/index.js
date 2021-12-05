@@ -10,13 +10,13 @@ Inventory.belongsTo(User);
 
 User.belongsToMany(Item, {
 	through: Inventory,
-	as: "user_inventory",
+	// as: "user_inventory",
 	foreignKey: "user_id"
   });
 
 Item.belongsToMany(User, {
 	through: Inventory,
-	as: "user_inventory",
+	// as: "user_inventory",
 	foreignKey: "item_id"
   });
 

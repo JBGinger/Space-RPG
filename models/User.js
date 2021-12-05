@@ -32,6 +32,7 @@ User.init(
 			},
 		},
 		// inventory_id: {
+		// 	type: DataTypes.INTEGER,
 		// 	references: {
 		// 		model: "inventory",
 		// 		key: "id",

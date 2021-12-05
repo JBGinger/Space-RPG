@@ -15,13 +15,10 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/inventory", (req, res) => {
-    if (!req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-	const inventoryData = { 
-		user: { id: req.session.user_id, username: req.session.username }
-		//items: {  }
+	// if user is not logged in, send them to login page
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
 	}
 	User.findOne({
 		where: {
@@ -55,8 +52,8 @@ router.get("/inventory", (req, res) => {
 
 router.get("/dashboard", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	console.log(req.session.loggedIn);
 	res.render("dashboard");
@@ -64,34 +61,44 @@ router.get("/dashboard", (req, res) => {
 
 router.get("/explore", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render("planetselect");
 });
 
 router.get("/mars", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render("mars");
 });
 
 router.get('/venus', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('venus');
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
+	}
+	res.render('venus');
 });
 
 router.get('/lowoxygen', (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render('lowoxygen');
-  });
+});
+
+router.get('/user', (req, res) => {
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
+	}
+	res.render('lowoxygen');
+});
+
+
 
 module.exports = router;
