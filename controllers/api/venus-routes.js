@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
     //Find items that match selected rarity. Math.random ensures that only one random item is selected.
 	Item.findAll({
         where: {
+            planet_id: 2,
             rarity: rarity
         }
 	})
