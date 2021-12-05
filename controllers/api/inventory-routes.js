@@ -3,6 +3,8 @@ const { User, Inventory, Item, Planet } = require("../../models");
 
 // GET /api/inventory
 router.get("/", (req, res) => {
+	console.log('current session', req.session);
+
 	Inventory.findAll({
 		include: [
 			{
