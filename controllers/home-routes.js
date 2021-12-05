@@ -23,7 +23,34 @@ router.get("/inventory", (req, res) => {
 		user: { id: req.session.user_id, username: req.session.username }
 		//items: {  }
 	}
-    res.render("inventory", inventoryData);
+	User.findOne({
+		where: {
+			id: req.session.user_id
+		},
+		attributes: [
+			'id',
+			'username'
+		],
+		include: [
+			{
+				model: Item,
+				attributes: ['id', 'item_name', 'rarity', 'price']
+			}
+		]
+	})
+		.then(dbUserData => {
+			console.log(dbUserData)
+			if (!dbUserData) {
+				res.status(404).json({ message: 'No User found with this id' });
+				return;
+			}
+			// res.json(dbUserData);
+			res.render("inventory", {
+				user: {
+					id: req.session.user_id, username: req.session.username
+				}
+			});
+		})
 });
 
 router.get("/dashboard", (req, res) => {
