@@ -1,4 +1,28 @@
 <div class="main-container">
-    <div id="welcome-text">Inventory</div>
-        {{!-- <p>Hello, my name is {{name}}!</p> --}}
+    {{!-- <div id="welcome-text"></div> --}}
+    {{!-- {{>inventory-table}} --}}
+
+    <div id="user-inventory">
+        {{user.username}}'s inventory
+    </div>
+
+    
+    <table>
+        <tr>
+            <th> Items </th>
+            <th> Rarity </th>
+            <th> Price </th>
+            {{!-- <th> Planet </th> --}}
+        </tr>
+        {{#each this}}
+        <tr>
+            <td> {{itemData.item_name}} </td>
+            <td> {{itemData.rarity}} </td>
+            <td> {{itemData.price}} </td>
+            {{!-- <td> Mars </td> --}}
+        </tr>
+        {{/each}}
+    </table>
+    
+
 </div>

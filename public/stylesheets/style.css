@@ -95,6 +95,16 @@ a:hover {
 	margin-bottom: auto;
 }
 
+#user-inventory {
+	color: white;
+	text-shadow: 1px 1px 15px #fff, 1px 1px 2px #ccc;
+	font-size: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: 20px;
+}
+
 .contents {
 	/* color: white;
     text-shadow: 1px 1px 15px #fff, 1px 1px 15px #ccc; */
@@ -158,14 +168,20 @@ a:hover {
 
 #background-image{
     background-image: url("/assets/starry-night-design.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #mars-background-image{
     background-image: url("/assets/planet-mars.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #venus-background-image{
     background-image: url("/assets/planet-venus.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .explore{
@@ -182,4 +198,29 @@ a:hover {
     text-decoration: none !important;
 }
 
+#mars-explore, #venus-explore{
+    background-color: rgb(60, 60, 60, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+}
 
+table {
+    font-family: 'M PLUS 1 Code', sans-serif;
+    text-shadow: 1px 1px 15px #fff, 1px 1px 1px #ccc;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    /* display: none; */
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(206, 206, 206, 0.8);
+  }
