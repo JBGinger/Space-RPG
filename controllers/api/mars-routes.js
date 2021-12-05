@@ -20,7 +20,12 @@ router.get("/", (req, res) => {
         where: {
             planet_id: 1,
             rarity: rarity
-        }
+        },
+        attributes: [
+            'item_name',
+            'rarity',
+            'price'
+        ]
 	})
 		.then((dbItemData) => {
             // selects random item from returned rarity
