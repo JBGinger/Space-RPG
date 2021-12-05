@@ -15,11 +15,11 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/inventory", (req, res) => {
-	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
-	}
-	res.render("inventory", { name: "Example" });
+    if (!req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    res.render("inventory", { user: { id: req.session.user_id, username: req.session.username } });
 });
 
 router.get("/dashboard", (req, res) => {
