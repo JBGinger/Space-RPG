@@ -15,21 +15,46 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/inventory", (req, res) => {
-    if (!req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-	const inventoryData = { 
-		user: { id: req.session.user_id, username: req.session.username }
-		//items: {  }
+	// if user is not logged in, send them to login page
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
 	}
-    res.render("inventory", inventoryData);
+
+	User.findOne({
+		where: {
+			id: req.session.user_id
+		},
+		attributes: [
+			'id',
+			'username'
+		],
+		include: [
+			{
+				model: Item,
+				attributes: ['id', 'item_name', 'rarity', 'price']
+			}
+		]
+	})
+		.then(dbUserData => {
+			console.log(dbUserData)
+			if (!dbUserData) {
+				res.status(404).json({ message: 'No User found with this id' });
+				return;
+			}
+			// res.json(dbUserData);
+			res.render("inventory", {
+				user: {
+					id: req.session.user_id, username: req.session.username
+				}
+			});
+		})
 });
 
 router.get("/dashboard", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	console.log(req.session.loggedIn);
 	res.render("dashboard");
@@ -37,34 +62,44 @@ router.get("/dashboard", (req, res) => {
 
 router.get("/explore", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render("planetselect");
 });
 
 router.get("/mars", (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render("mars");
 });
 
 router.get('/venus', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('venus');
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
+	}
+	res.render('venus');
 });
 
 router.get('/lowoxygen', (req, res) => {
 	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+		res.redirect('/');
+		return;
 	}
 	res.render('lowoxygen');
-  });
+});
+
+router.get('/user', (req, res) => {
+	if (!req.session.loggedIn) {
+		res.redirect('/');
+		return;
+	}
+	res.render('lowoxygen');
+});
+
+
 
 module.exports = router;
