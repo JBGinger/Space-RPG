@@ -15,11 +15,15 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/inventory", (req, res) => {
-	if (!req.session.loggedIn) {
-	  res.redirect('/');
-	  return;
+    if (!req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+	const inventoryData = { 
+		user: { id: req.session.user_id, username: req.session.username }
+		//items: {  }
 	}
-	res.render("inventory", { name: "Example" });
+    res.render("inventory", inventoryData);
 });
 
 router.get("/dashboard", (req, res) => {
