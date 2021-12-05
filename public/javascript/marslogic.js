@@ -11,8 +11,7 @@ exploreButton.addEventListener("click", function (event) {
     }
     if (oxygen < 1) {
         document.location.replace('lowoxygen');
-    } else {
-        fetch("/api/mars")
-        .then(Item => console.log(Item));
     }
+    fetch("/api/mars")
+    .then(Item => console.log(Item));
 })
