@@ -23,8 +23,11 @@ router.get("/", (req, res) => {
         }
 	})
 		.then((dbItemData) => {
+            // selects random item from returned rarity
             var itemIndex = Math.floor(Math.random() * dbItemData.length);
+            // found item ( ex/ dbItemData[0] )
             var item = dbItemData[itemIndex];
+            // returning the response as a JSON object called Item
             res.json({"Item": item})
         })
 		.catch((err) => {
