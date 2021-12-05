@@ -3,16 +3,15 @@ const d20 = require("d20");
 const { Item, Planet } = require("../../models");
 
 router.get("/", (req, res) => {
-    var diceThrow = 95;
-    //var diceThrow = req.params.dicethrow;
+    var diceThrow = d20.roll(20);
     var rarity = "";
-    if (diceThrow <= 100 && diceThrow >= 99) {
+    if (diceThrow <= 20 && diceThrow > 19) {
         rarity = "super rare";
-    } else if (diceThrow < 99 && diceThrow >= 80) {
+    } else if (diceThrow <= 19 && diceThrow >= 16) {
         rarity = "rare";
-    } else if (diceThrow < 80 && diceThrow >= 60) {
+    } else if (diceThrow < 16 && diceThrow >= 11) {
         rarity = "uncommon";
-    } else if (diceThrow < 60 && diceThrow >= 1) {
+    } else if (diceThrow <= 10 && diceThrow >= 1) {
         rarity = "common";
     }
 
