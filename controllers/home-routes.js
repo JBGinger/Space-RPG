@@ -55,4 +55,12 @@ router.get('/venus', (req, res) => {
   res.render('venus');
 });
 
+router.get('/lowoxygen', (req, res) => {
+	if (!req.session.loggedIn) {
+	  res.redirect('/');
+	  return;
+	}
+	res.render('lowoxygen');
+  });
+
 module.exports = router;
