@@ -19,7 +19,11 @@ router.get("/inventory", (req, res) => {
       res.redirect('/');
       return;
     }
-    res.render("inventory", { user: { id: req.session.user_id, username: req.session.username } });
+	const inventoryData = { 
+		user: { id: req.session.user_id, username: req.session.username }
+		//items: {  }
+	}
+    res.render("inventory", inventoryData);
 });
 
 router.get("/dashboard", (req, res) => {
