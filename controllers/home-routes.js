@@ -20,7 +20,6 @@ router.get("/inventory", (req, res) => {
 		res.redirect('/');
 		return;
 	}
-
 	User.findOne({
 		where: {
 			id: req.session.user_id
