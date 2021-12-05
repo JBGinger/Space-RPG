@@ -1,19 +1,24 @@
 const router = require("express").Router();
+const d20 = require("d20");
 const { Item, Planet } = require("../../models");
 
 router.get("/", (req, res) => {
-    var diceThrow = 95;
-    //var diceThrow = req.params.dicethrow;
+    var diceThrow = d20.roll(20);
     var rarity = "";
-    if (diceThrow <= 100 && diceThrow >= 95) {
+    if (diceThrow <= 20 && diceThrow > 19) {
         rarity = "super rare";
-    } else if (diceThrow < 95 && diceThrow >= 80) {
+    } else if (diceThrow <= 19 && diceThrow >= 16) {
         rarity = "rare";
+    } else if (diceThrow < 16 && diceThrow >= 11) {
+        rarity = "uncommon";
+    } else if (diceThrow <= 10 && diceThrow >= 1) {
+        rarity = "common";
     }
 
     //Find items that match selected rarity. Math.random ensures that only one random item is selected.
 	Item.findAll({
         where: {
+            planet_id: 1,
             rarity: rarity
         }
 	})
