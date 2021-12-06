@@ -40,9 +40,9 @@ exploreButton.addEventListener("click", function (event) {
                 localStorage.setItem(key, JSON.stringify(inventory));
 
                 newItemMessage.innerHTML = "You found a new item!"
-                itemName.innerHTML = "Item Name: " + Item.item_name;
-                itemRarity.innerHTML = "Item Rarity: " + Item.rarity;
-                itemValue.innerHTML = "Item Value: " + Item.price;
+                itemName.innerHTML = "Item Name: " + Item?.item_name;
+                itemRarity.innerHTML = "Item Rarity: " + Item?.rarity;
+                itemValue.innerHTML = "Item Value: " + Item?.price;
             })
         }
     })
