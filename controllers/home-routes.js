@@ -71,7 +71,11 @@ router.get("/mars", (req, res) => {
 		res.redirect('/');
 		return;
 	}
-	res.render("mars");
+	res.render("mars", {
+		user: {
+			id: req.session.user_id, username: req.session.username
+		}
+	});
 });
 
 router.get('/venus', (req, res) => {
@@ -79,7 +83,11 @@ router.get('/venus', (req, res) => {
 		res.redirect('/');
 		return;
 	}
-	res.render('venus');
+	res.render("venus", {
+		user: {
+			id: req.session.user_id, username: req.session.username
+		}
+	});
 });
 
 router.get('/lowoxygen', (req, res) => {
