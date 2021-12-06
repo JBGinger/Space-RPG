@@ -27,9 +27,18 @@ exploreButton.addEventListener("click", function (event) {
         if (response.ok) {
             response.json().then(function (Item) {
                 console.log(Item);
+
+                const userIdInput = document.getElementById('user-id');
+                const userId = userIdInput ? userIdInput.value : -1;
+                if(userId === -1) return;
+
+                const key = `Inventory-${userId}`;
+
                 Item = Item.Item;
                 inventory[inventory.length] = Item;
-                localStorage.setItem("Inventory", JSON.stringify(inventory));
+
+                localStorage.setItem(key, JSON.stringify(inventory));
+                
                 newItemMessage.innerHTML = "You found a new item!"
                 itemName.innerHTML = "Item Name: " + Item.item_name;
                 itemRarity.innerHTML = "Item Rarity: " + Item.rarity;
