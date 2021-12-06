@@ -6,13 +6,13 @@ router.get("/", (req, res) => {
     var diceThrow = d20.roll(20);
     var rarity = "";
     if (diceThrow <= 20 && diceThrow > 19) {
-        rarity = "super rare";
+        rarity = "Super Rare";
     } else if (diceThrow <= 19 && diceThrow >= 16) {
-        rarity = "rare";
+        rarity = "Rare";
     } else if (diceThrow < 16 && diceThrow >= 11) {
-        rarity = "uncommon";
+        rarity = "Uncommon";
     } else if (diceThrow <= 10 && diceThrow >= 1) {
-        rarity = "common";
+        rarity = "Common";
     }
 
     //Find items that match selected rarity. Math.random ensures that only one random item is selected.

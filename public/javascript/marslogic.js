@@ -4,6 +4,7 @@ const lowO2Warning = document.getElementById("low-o2-warning");
 const itemName = document.getElementById("item-name");
 const itemRarity = document.getElementById("item-rarity");
 const itemValue = document.getElementById("item-value");
+const newItemMessage = document.getElementById("new-item-message");
 let oxygen = 100;
 var inventory = [];
 
@@ -29,9 +30,10 @@ exploreButton.addEventListener("click", function (event) {
                 Item = Item.Item;
                 inventory[inventory.length] = Item;
                 localStorage.setItem("Inventory", JSON.stringify(inventory));
-                itemName.innerHTML = Item.item_name;
-                itemRarity.innerHTML = Item.rarity;
-                itemValue.innerHTML = Item.price;
+                newItemMessage.innerHTML = "You found a new item!"
+                itemName.innerHTML = "Item Name: " + Item.item_name;
+                itemRarity.innerHTML = "Item Rarity: " + Item.rarity;
+                itemValue.innerHTML = "Item Value: " + Item.price;
             })
         }
     })
