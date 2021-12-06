@@ -7,29 +7,35 @@ const itemValue = document.getElementById("item-value");
 let oxygen = 100;
 
 exploreButton.addEventListener("click", function (event) {
-    oxygen--;
-    oxygenMeter.innerHTML = "O2: " + oxygen + "%";
-    if (oxygen <= 15) {
-        lowO2Warning.innerHTML = "Warning! You are running low on oxygen!";
-    }
-    if (oxygen < 1) {
-        document.location.replace('lowoxygen');
-    }
-    fetch("/api/mars").then(function (response) {
-        if (response.ok) {
-            response.json().then(function (Item) {
-                console.log(Item)
-                itemName.innerHTML = Item.item_name;
-                itemRarity.innerHTML = Item.rarity;
-                itemValue.innerHTML = Item.price;
-            })
-        }
-    })
+	oxygen--;
+	oxygenMeter.innerHTML = "O2: " + oxygen + "%";
+	if (oxygen <= 15) {
+		lowO2Warning.innerHTML = "Warning! You are running low on oxygen!";
+	}
+	if (oxygen < 1) {
+		document.location.replace("lowoxygen");
+	}
 
-    // fetch("/api/mars").then(Item => {
-    //     console.log(Item)
-    //     itemName.innerHTML = Item.item_name;
-    //     itemRarity.innerHTML = Item.rarity;
-    //     itemValue.innerHTML = Item.price;
-    // });
-})
+	fetch("/api/mars").then(function (response) {
+		if (response.ok) {
+			response.json()
+				.then(function (Item) {
+					console.log(Item);
+					itemName.innerHTML = Item.item_name;
+					itemRarity.innerHTML = Item.rarity;
+					itemValue.innerHTML = Item.price;
+				})
+				.then((newItem) => {
+					// TODO: fetch /api/inventory/:id for current User's inventory id?
+					// then PUT item into inventory??
+				});
+		}
+	});
+
+	// fetch("/api/mars").then(Item => {
+	//     console.log(Item)
+	//     itemName.innerHTML = Item.item_name;
+	//     itemRarity.innerHTML = Item.rarity;
+	//     itemValue.innerHTML = Item.price;
+	// });
+});
