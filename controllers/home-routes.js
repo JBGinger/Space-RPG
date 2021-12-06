@@ -41,7 +41,6 @@ router.get("/inventory", (req, res) => {
 				res.status(404).json({ message: 'No User found with this id' });
 				return;
 			}
-			// res.json(dbUserData);
 			res.render("inventory", {
 				user: {
 					id: req.session.user_id, username: req.session.username
@@ -98,7 +97,5 @@ router.get('/user', (req, res) => {
 	}
 	res.render('lowoxygen');
 });
-
-
 
 module.exports = router;

@@ -5,6 +5,13 @@ const itemName = document.getElementById("item-name");
 const itemRarity = document.getElementById("item-rarity");
 const itemValue = document.getElementById("item-value");
 let oxygen = 100;
+var inventory = [];
+
+function Init() {
+    var items = localStorage.getItem("Inventory");
+    if (items != undefined)
+        inventory = JSON.parse(localStorage.getItem("Inventory"));
+}
 
 exploreButton.addEventListener("click", function (event) {
     oxygen--;
@@ -18,18 +25,16 @@ exploreButton.addEventListener("click", function (event) {
     fetch("/api/mars").then(function (response) {
         if (response.ok) {
             response.json().then(function (Item) {
-                console.log(Item)
+                console.log(Item);
+                Item = Item.Item;
+                inventory[inventory.length] = Item;
+                localStorage.setItem("Inventory", JSON.stringify(inventory));
                 itemName.innerHTML = Item.item_name;
                 itemRarity.innerHTML = Item.rarity;
                 itemValue.innerHTML = Item.price;
             })
         }
     })
-
-    // fetch("/api/mars").then(Item => {
-    //     console.log(Item)
-    //     itemName.innerHTML = Item.item_name;
-    //     itemRarity.innerHTML = Item.rarity;
-    //     itemValue.innerHTML = Item.price;
-    // });
 })
+
+Init();

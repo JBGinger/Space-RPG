@@ -1,9 +1,6 @@
 <div class="main-container">
-    {{!-- <div id="welcome-text"></div> --}}
-    {{!-- {{>inventory-table}} --}}
-
     <div id="user-inventory">
-        {{user.username}}'s inventory
+        {{user.username}}'s Inventory
     </div>
 
     <table>
@@ -11,18 +8,10 @@
             <th> Item </th>
             <th> Rarity </th>
             <th> Price </th>
-            {{!-- <th> Planet </th> --}}
         </tr>
-        {{!-- {{#each this}} --}}
-        <tr>
-            <td> {{item.item_name}} </td>
-            <td> {{item.rarity}} </td>
-            <td> {{item.price}} </td>
-            {{!-- <td> Mars </td> --}}
-        </tr>
-        {{!-- {{/each}} --}}
+        <tbody id="inventory"></tbody>
     </table>
-    
+    <script src="/javascript/inventorylogic.js"></script>
 
 </div>
 

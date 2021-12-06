@@ -20,12 +20,17 @@ router.get("/", (req, res) => {
         where: {
             planet_id: 2,
             rarity: rarity
-        }
+        },
+        attributes: [
+            'item_name',
+            'rarity',
+            'price'
+        ]
 	})
 		.then((dbItemData) => {
             var itemIndex = Math.floor(Math.random() * dbItemData.length);
             var item = dbItemData[itemIndex];
-            res.json({"Item": item})
+            res.json({"Item": item});
         })
 		.catch((err) => {
 			console.log(err);

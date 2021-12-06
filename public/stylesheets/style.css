@@ -4,7 +4,8 @@ body {
 }
 
 .wrapper {
-	height: 1000px;
+	min-height: 1000px;
+	padding-bottom:10px;
 }
 
 h1 {
@@ -69,7 +70,7 @@ a:hover {
 }
 
 .main-container {
-	height: 650px;
+	min-height: 650px;
 	margin: 0 40px 0 40px;
 	padding: 20px;
 	border: 2px gray;
